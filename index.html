@@ -1,0 +1,327 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayush Photography</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+scroll-behavior:smooth;
+}
+
+header{
+background:black;
+padding:20px;
+text-align:center;
+}
+
+header h1{
+font-size:36px;
+}
+
+nav{
+background:#1c1c1c;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-size:18px;
+}
+
+.hero{
+height:90vh;
+background:url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+animation:zoom 20s infinite alternate;
+}
+
+@keyframes zoom{
+0%{background-size:100%;}
+100%{background-size:120%;}
+}
+
+.hero h2{
+font-size:55px;
+background:rgba(0,0,0,0.6);
+padding:25px;
+border-radius:10px;
+}
+
+.section{
+padding:60px;
+text-align:center;
+}
+
+.gallery{
+columns:3;
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+margin-bottom:15px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+button{
+background:#ff3b3b;
+border:none;
+padding:12px 25px;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+form input, form select{
+padding:10px;
+margin:10px;
+width:250px;
+border:none;
+border-radius:6px;
+}
+
+.admin{
+background:#1b1b1b;
+padding:20px;
+margin-top:20px;
+}
+
+footer{
+background:black;
+padding:20px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 20px;
+border-radius:50px;
+text-decoration:none;
+font-size:16px;
+}
+
+.call{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#007bff;
+color:white;
+padding:14px 20px;
+border-radius:50px;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Ayush Photography</h1>
+<p>Wedding • Model • Events • Baby Shoot</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#booking">Booking</a>
+<a href="#client">Client Photos</a>
+<a href="#admin">Admin</a>
+<a href="#instagram">Instagram</a>
+</nav>
+
+<section class="hero">
+<h2>Capturing Your Beautiful Moments</h2>
+</section>
+
+<section id="gallery" class="section">
+
+<h2>Photography Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
+<img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0">
+<img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8">
+<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+
+</div>
+
+</section>
+
+<section id="booking" class="section">
+
+<h2>Book a Photoshoot</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name"><br>
+
+<input type="date"><br>
+
+<select>
+
+<option>Wedding Shoot</option>
+<option>Model Shoot</option>
+<option>Event Shoot</option>
+<option>Baby Shoot</option>
+
+</select><br>
+
+<button type="button" onclick="pay()">Pay Advance</button>
+
+</form>
+
+<p>Phone: 9302323053</p>
+
+</section>
+
+<section id="client" class="section">
+
+<h2>Client Photo Download</h2>
+
+<input type="password" id="clientPass" placeholder="Enter Password">
+
+<button onclick="openGallery()">Open Gallery</button>
+
+<div id="clientGallery" style="display:none;margin-top:20px">
+
+<h3>Download Your Photos</h3>
+
+<a href="https://images.unsplash.com/photo-1519741497674-611481863552" download>
+<button>Download Photo 1</button>
+</a>
+
+<a href="https://images.unsplash.com/photo-1522673607200-164d1b6ce486" download>
+<button>Download Photo 2</button>
+</a>
+
+</div>
+
+</section>
+
+<section id="admin" class="section">
+
+<h2>Admin Upload Panel</h2>
+
+<div class="admin">
+
+<input type="file" id="upload" multiple>
+
+<button onclick="preview()">Upload Photos</button>
+
+<div id="preview"></div>
+
+</div>
+
+</section>
+
+<section id="instagram" class="section">
+
+<h2>Instagram</h2>
+
+<p>@a.c.photography47</p>
+
+<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+
+<iframe src="//lightwidget.com/widgets/instagram.html"
+scrolling="no"
+allowtransparency="true"
+class="lightwidget-widget"
+style="width:100%;border:0;"></iframe>
+
+</section>
+
+<footer>
+<p>© 2026 Ayush Photography</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919302323053">WhatsApp</a>
+<a class="call" href="tel:9302323053">Call</a>
+
+<script>
+
+function openGallery(){
+
+let pass=document.getElementById("clientPass").value
+
+if(pass=="1234"){
+
+document.getElementById("clientGallery").style.display="block"
+
+}else{
+
+alert("Wrong Password")
+
+}
+
+}
+
+function preview(){
+
+let files=document.getElementById("upload").files
+
+let preview=document.getElementById("preview")
+
+preview.innerHTML=""
+
+for(let file of files){
+
+let img=document.createElement("img")
+
+img.src=URL.createObjectURL(file)
+
+img.style.width="200px"
+img.style.margin="10px"
+img.style.borderRadius="10px"
+
+preview.appendChild(img)
+
+}
+
+}
+
+function pay(){
+
+alert("Connect Razorpay here for real payment")
+
+}
+
+</script>
+
+</body>
+</html>
+```
